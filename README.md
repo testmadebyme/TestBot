@@ -3,4 +3,4 @@ UnivercitySecy2_bot
 
 ### About
 
-This is your academy project's. First lesson. 
+This is my Chat_Bot_Academy project's. First lesson. 
