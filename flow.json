@@ -14,6 +14,36 @@
         "info": ""
     },
     {
+        "id": "1f3cb0bd.e0c34f",
+        "type": "telegram bot",
+        "z": "aec7b1a8.b53f5",
+        "botname": "HeinzBot"
+    },
+    {
+        "id": "8bcd7bdd.b15c78",
+        "type": "telegram bot",
+        "botname": "UnivercitySecy2_bot",
+        "usernames": "olllllllllla",
+        "chatids": "688401120",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
         "id": "5e86036e.d2eadc",
         "type": "inject",
         "z": "a413c5de.eff2d8",
@@ -182,5 +212,123 @@
         "x": 430,
         "y": 440,
         "wires": []
+    },
+    {
+        "id": "59aeb36e.a6514c",
+        "type": "telegram receiver",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "bot": "8bcd7bdd.b15c78",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "decb1355.ddf0b"
+            ],
+            [
+                "7cc9439f.5fdcec"
+            ]
+        ]
+    },
+    {
+        "id": "ec7432bc.138bd",
+        "type": "telegram sender",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "bot": "8bcd7bdd.b15c78",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 220,
+        "wires": [
+            [
+                "7cc9439f.5fdcec"
+            ]
+        ]
+    },
+    {
+        "id": "decb1355.ddf0b",
+        "type": "function",
+        "z": "aec7b1a8.b53f5",
+        "name": "Hello",
+        "func": "msg.payload.content =\"Hello friend\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "ec7432bc.138bd"
+            ]
+        ]
+    },
+    {
+        "id": "7cc9439f.5fdcec",
+        "type": "debug",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3026be2c.3847a2",
+        "type": "function",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "func": "let payload = {\n    chatId: 688401120,\n    type: \"message\",\n    content: \"Nice to meet you I`m bot\"\n}\nreturn {payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "7cc9439f.5fdcec",
+                "ec7432bc.138bd"
+            ]
+        ]
+    },
+    {
+        "id": "3516b55b.b5283a",
+        "type": "inject",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "3026be2c.3847a2"
+            ]
+        ]
     }
 ]
