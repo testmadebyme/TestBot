@@ -1,1 +1,186 @@
-[]
+[
+    {
+        "id": "aec7b1a8.b53f5",
+        "type": "tab",
+        "label": "First_Message_Telegram_lib",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a413c5de.eff2d8",
+        "type": "tab",
+        "label": "Send_First_Message",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5e86036e.d2eadc",
+        "type": "inject",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "519acc7a.fe2634"
+            ]
+        ]
+    },
+    {
+        "id": "5b2a4d59.fb0cd4",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "519acc7a.fe2634",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/setWebhook?url=https://79e0c702b938.ngrok.io/UnivercitySecy2_bot",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "5b2a4d59.fb0cd4"
+            ]
+        ]
+    },
+    {
+        "id": "fe21fe38.121c9",
+        "type": "http in",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "url": "/UnivercitySecy2_bot",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "7f4cfafb.abf044",
+                "dc3f4632.3aabc8",
+                "35505cbd.6300c4"
+            ]
+        ]
+    },
+    {
+        "id": "35505cbd.6300c4",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.payload = {\n\n  text: 'Hello friend',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "e21653c1.1fe95"
+            ]
+        ]
+    },
+    {
+        "id": "e21653c1.1fe95",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "b8a1cedb.296a7"
+            ]
+        ]
+    },
+    {
+        "id": "b8a1cedb.296a7",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7f4cfafb.abf044",
+        "type": "http response",
+        "z": "a413c5de.eff2d8",
+        "name": "http 200",
+        "statusCode": "",
+        "headers": {},
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "dc3f4632.3aabc8",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 440,
+        "wires": []
+    }
+]
