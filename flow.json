@@ -3,7 +3,7 @@
         "id": "aec7b1a8.b53f5",
         "type": "tab",
         "label": "First_Message_Telegram_lib",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -11,6 +11,13 @@
         "type": "tab",
         "label": "Send_First_Message",
         "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "92f9cbe5.9889c8",
+        "type": "tab",
+        "label": "Simple Telegram-Bot",
+        "disabled": true,
         "info": ""
     },
     {
@@ -42,6 +49,16 @@
         "useselfsignedcertificate": false,
         "sslterminated": false,
         "verboselogging": false
+    },
+    {
+        "id": "529c4263.aeab0c",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "internship_telegram_bot",
+        "tz": "",
+        "charset": "UTF8"
     },
     {
         "id": "5e86036e.d2eadc",
@@ -125,7 +142,7 @@
             [
                 "7f4cfafb.abf044",
                 "dc3f4632.3aabc8",
-                "35505cbd.6300c4"
+                "a50ae02c.fc95a"
             ]
         ]
     },
@@ -139,12 +156,10 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 560,
-        "y": 240,
+        "x": 580,
+        "y": 600,
         "wires": [
-            [
-                "e21653c1.1fe95"
-            ]
+            []
         ]
     },
     {
@@ -160,12 +175,10 @@
         "persist": false,
         "proxy": "",
         "authType": "basic",
-        "x": 750,
-        "y": 200,
+        "x": 1190,
+        "y": 160,
         "wires": [
-            [
-                "b8a1cedb.296a7"
-            ]
+            []
         ]
     },
     {
@@ -181,8 +194,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 930,
-        "y": 300,
+        "x": 1070,
+        "y": 240,
         "wires": []
     },
     {
@@ -329,6 +342,710 @@
             [
                 "3026be2c.3847a2"
             ]
+        ]
+    },
+    {
+        "id": "a50ae02c.fc95a",
+        "type": "change",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "receiver",
+                "pt": "msg",
+                "to": "payload.message.from.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "702bf8d3.71e0d8"
+            ]
+        ]
+    },
+    {
+        "id": "702bf8d3.71e0d8",
+        "type": "switch",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "property": "payload.message.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "payload.message.text",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 260,
+        "wires": [
+            [
+                "12fca304.97c48d"
+            ],
+            [
+                "33a12d46.7d95e2"
+            ]
+        ]
+    },
+    {
+        "id": "12fca304.97c48d",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1170972715:AAEntMHSaQEOD2ueLXb1VWmDoidnnbnEQCI/sendMessage\"\n\nmsg.payload = {\n\n        \n\n        \"text\": \"Привет! Выбери как часто напоминать тебе о воде?😏\",\n\n        \"reply_markup\": {\n\n            \"keyboard\": [['Каждые полчаса'],['Каждый час'], ['Каждые два часа']],\n\n                  \"resize_keyboard\" : true, \n\n                   \"one_time_keyboard\" : false\n\n        },\n\n\"chat_id\": msg.receiver\n\n}\n\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 860,
+        "y": 200,
+        "wires": [
+            [
+                "e21653c1.1fe95"
+            ]
+        ]
+    },
+    {
+        "id": "79f6a32b.6e0ccc",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1350,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33a12d46.7d95e2",
+        "type": "switch",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "property": "payload.message.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Каждые полчаса",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Каждый час",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Каждые два часа",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 800,
+        "y": 400,
+        "wires": [
+            [
+                "f889023b.d7ad7"
+            ],
+            [
+                "aa8fdadc.69ca68"
+            ],
+            [
+                "70c034d4.45835c"
+            ]
+        ]
+    },
+    {
+        "id": "8c800933.b4d348",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\n\"text\": \"Выпей воды\",\n\n\"chat_id\": msg.receiver \n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1180,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "277ded26.383c72",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\n\"text\": \"Выпей воды\",\n\n\"chat_id\": msg.receiver \n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e559c09d.63893",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\n\"text\": \"Выпей воды\",\n\n\"chat_id\": msg.receiver \n    \n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 760,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e622c4af.7fd2b8",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1570,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa0c1947.a3bea8",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1570,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98c3bf0a.4215d",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1550,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f889023b.d7ad7",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\n\"text\": \"Отлично! Буду напоминать каждые пол часа😌\",\n\n\"chat_id\": msg.receiver }\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "e622c4af.7fd2b8"
+            ]
+        ]
+    },
+    {
+        "id": "aa8fdadc.69ca68",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\n\"text\": \"Отлично! Буду напоминать каждый час😌\",\n\n\"chat_id\": msg.receiver }\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 400,
+        "wires": [
+            [
+                "fa0c1947.a3bea8"
+            ]
+        ]
+    },
+    {
+        "id": "70c034d4.45835c",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.method=\"POST\"\nmsg.url= \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\"\n\nmsg.payload = {\n\ntext: \"Отлично! Буду напоминать каждые 2 часа😌\",\n\nchat_id: msg.receiver \n    \n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 480,
+        "wires": [
+            [
+                "98c3bf0a.4215d"
+            ]
+        ]
+    },
+    {
+        "id": "69153c45.b8e384",
+        "type": "inject",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "262a4c74.52d974"
+            ]
+        ]
+    },
+    {
+        "id": "262a4c74.52d974",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/setWebhook?url=https://79e0c702b938.ngrok.io/UnivercitySecy2_bot",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "95570bb5.3b6118"
+            ]
+        ]
+    },
+    {
+        "id": "95570bb5.3b6118",
+        "type": "debug",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "feb2d844.7b74e8",
+        "type": "http in",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "url": "/UnivercitySecy2_bot",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "a35954e9.5f4a88",
+                "fe456321.7acef",
+                "2f365b2c.02f0b4"
+            ]
+        ]
+    },
+    {
+        "id": "a35954e9.5f4a88",
+        "type": "debug",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "49ab12d9.459fac",
+        "type": "function",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "func": "msg.method = \"POST\";\nmsg.url = \"https://api.telegram.org/bot1635544975:AAGRCBpmEMb0LjmRlGmpRScUYylWy-TAJRs/sendMessage\";\nmsg.payload = {\n\n    \"text\": \"Привіт! Яка твоя улюблена пора року?\",\n    \"reply_markup\": {\n            \"keyboard\": [['Осінь'],['Зима'], ['Весна'], ['Літо']],\n            \"resize_keyboard\" : true, \n      \"one_time_keyboard\" : true\n\n    },\n  \"chat_id\": msg.receiver,\n\n  }\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "f8622f9f.749ca"
+            ]
+        ]
+    },
+    {
+        "id": "f8622f9f.749ca",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 950,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe456321.7acef",
+        "type": "http response",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 120,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "2f365b2c.02f0b4",
+        "type": "change",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "receiver",
+                "pt": "msg",
+                "to": "payload.message.from.id",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 380,
+        "wires": [
+            [
+                "7cd951e6.dafff"
+            ]
+        ]
+    },
+    {
+        "id": "590c55ea.ac37cc",
+        "type": "switch",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "property": "payload.message.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Літо",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Зима",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Весна",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Осінь",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 790,
+        "y": 460,
+        "wires": [
+            [
+                "492d5969.2dfa18"
+            ],
+            [
+                "68f370d4.264cc"
+            ],
+            [
+                "12543d2c.b8ba93"
+            ],
+            [
+                "85d9bf75.6e1eb"
+            ]
+        ]
+    },
+    {
+        "id": "7cd951e6.dafff",
+        "type": "switch",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "property": "payload.message.text",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/start",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "payload.message.text",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 380,
+        "wires": [
+            [
+                "49ab12d9.459fac"
+            ],
+            [
+                "590c55ea.ac37cc"
+            ]
+        ]
+    },
+    {
+        "id": "85d9bf75.6e1eb",
+        "type": "function",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "func": "msg.method = \"POST\";\nmsg.url = \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\";\nmsg.payload = {\n\n    \"text\": \"Люблю осінь!\",\n    \"chat_id\": msg.receiver,\n\n  }\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 540,
+        "wires": [
+            [
+                "54002f5f.a150f"
+            ]
+        ]
+    },
+    {
+        "id": "68f370d4.264cc",
+        "type": "function",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "func": "msg.method = \"POST\";\nmsg.url = \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\";\nmsg.payload = {\n\n    \"text\": \"Люблю зиму!\",\n    \"chat_id\": msg.receiver,\n\n  }\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 420,
+        "wires": [
+            [
+                "efffd0e4.400ff"
+            ]
+        ]
+    },
+    {
+        "id": "12543d2c.b8ba93",
+        "type": "function",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "func": "msg.method = \"POST\";\nmsg.url = \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\";\nmsg.payload = {\n\n    \"text\": \"Люблю весну!\",\n    \"chat_id\": msg.receiver,\n\n  }\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 480,
+        "wires": [
+            [
+                "14852a94.aa6e85"
+            ]
+        ]
+    },
+    {
+        "id": "492d5969.2dfa18",
+        "type": "function",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "func": "msg.method = \"POST\";\nmsg.url = \"https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage\";\nmsg.payload = {\n\n    \"text\": \"Люблю літо!\",\n    \"chat_id\": msg.receiver,\n\n  }\n return msg;\n \n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 980,
+        "y": 360,
+        "wires": [
+            [
+                "b2a5ad3b.7c06f"
+            ]
+        ]
+    },
+    {
+        "id": "b2a5ad3b.7c06f",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1150,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "efffd0e4.400ff",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1635544975:AAGRCBpmEMb0LjmRlGmpRScUYylWy-TAJRs/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1150,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14852a94.aa6e85",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1150,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54002f5f.a150f",
+        "type": "http request",
+        "z": "92f9cbe5.9889c8",
+        "name": "",
+        "method": "use",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 1150,
+        "y": 540,
+        "wires": [
+            []
         ]
     }
 ]
