@@ -1,7 +1,7 @@
 UnivercitySecy2_bot
 ===================
 
-### About
+### About Bot
 
 🔹 TelegramBot with Node-red prototyping. <br>🔹 Academy project's.<br> 🔹 Edu Tech Domain. 
 
