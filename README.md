@@ -3,7 +3,7 @@ UnivercitySecy2_bot
 
 ### About
 
-TelegramBot with Node-red prototyping. Academy project's. Edu Tech Domain. 
+TelegramBot with Node-red prototyping. <br>Academy project's. Edu Tech Domain. 
 
 NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, initially for the Department of ISM, NULP (Lviv Polytechnic National University).
  
