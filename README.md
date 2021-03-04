@@ -3,7 +3,7 @@ UnivercitySecy2_bot
 
 ### About
 
-This is my Chat_Bot_Academy project's. First lesson. 
+TelegramBot with Node-red prototyping. My Academy project's. Edu Tech Domain. 
 
 *Custom links which used:*
 
