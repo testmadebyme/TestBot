@@ -11,9 +11,9 @@ NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, in
 
 ### About Main Functionality:
 
-User MENU, chatbot based on DialogFlow integration <br>
-Admin`s pannel with CRUD operations <br>
-Mass Mesgrationsaging Options <br>
+⚙️ User MENU, chatbot based on DialogFlow integration <br>
+⚙️ Admin`s pannel with CRUD operations <br>
+⚙️ Mass Mesgrationsaging Options <br>
 
 <b>🔗 Whimsical project scheme<b> https://whimsical.com/internship-LbU2aBLZp3Fgede6Kbvq7m  <br>
 Video: <br>
