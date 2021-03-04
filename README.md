@@ -9,7 +9,8 @@ NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, in
  
 <b>GET Skills & Experience:</b> Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow, Postman.<br>
 
-###Main functionality:
+### About Main Functionality:
+
 <br>
 User MENU, chatbot based on DialogFlow integration <br>
 Admin`s pannel with CRUD operations <br>
