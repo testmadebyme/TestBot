@@ -7,7 +7,7 @@ TelegramBot with Node-red prototyping. <br>Academy project's. Edu Tech Domain.
 
 NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, initially for the Department of ISM, NULP (Lviv Polytechnic National University).
  
-Have Experience: Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow.
+GET Skills & Experience: Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow, Postman.
 
 Whimsical project scheme  https://whimsical.com/internship-LbU2aBLZp3Fgede6Kbvq7m
 
