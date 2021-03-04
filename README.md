@@ -9,8 +9,8 @@ NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, in
  
 <b>GET Skills & Experience:</b> Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow, Postman.
 
-Whimsical project scheme  https://whimsical.com/internship-LbU2aBLZp3Fgede6Kbvq7m
-Video:
+Whimsical project scheme  https://whimsical.com/internship-LbU2aBLZp3Fgede6Kbvq7m  <br>
+Video: <br>
 Screens:
 
 
