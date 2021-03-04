@@ -16,8 +16,8 @@ NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, in
 ⚙️ Mass Mesgrationsaging Options <br>
 
 <b>🔗 Whimsical project scheme<b> https://whimsical.com/internship-LbU2aBLZp3Fgede6Kbvq7m  <br>
-Video: <br>
-Screens:
+🎬 Video: <br>
+🖥 Screens:
 
 
 * For my personal use Custom links:*
