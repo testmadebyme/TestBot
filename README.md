@@ -7,7 +7,7 @@ UnivercitySecy2_bot
 
 NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, initially for the Department of ISM, NULP (Lviv Polytechnic National University).
  
-<b>GET Skills & Experience:</b> Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow, Postman.<br>
+<b>GET Skills & Experience:</b> Node-red, JS, MongoBD, PostgreSQL, Whimsical, Telegram API, Google DialogFlow, Postman, ngrock<br>
 
 ### About Main Functionality:
 
