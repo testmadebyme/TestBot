@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-Bot_Telegram
-============
+
 
 ### About
 
