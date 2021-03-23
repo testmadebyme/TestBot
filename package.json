@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "name": "Bot_Telegram",
+=======
+    "name": "UnivercitySecy2_bot",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
     "description": "A Node-RED Project",
     "version": "0.0.1",
     "dependencies": {},

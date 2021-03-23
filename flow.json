@@ -1,19 +1,32 @@
 [
     {
+<<<<<<< HEAD
         "id": "6a384cdf.3670b4",
         "type": "tab",
         "label": "Main User FLow",
+=======
+        "id": "aec7b1a8.b53f5",
+        "type": "tab",
+        "label": "First_Message_Telegram_lib",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "disabled": false,
         "info": ""
     },
     {
+<<<<<<< HEAD
         "id": "c4e1ec3b.2615c",
         "type": "tab",
         "label": "Add & Delete Admin Options",
+=======
+        "id": "a413c5de.eff2d8",
+        "type": "tab",
+        "label": "Send_First_Message",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "disabled": false,
         "info": ""
     },
     {
+<<<<<<< HEAD
         "id": "5ab382e1.b0999c",
         "type": "tab",
         "label": "Edit Information at Admin`s Pannel",
@@ -148,6 +161,42 @@
         "type": "inject",
         "z": "6a384cdf.3670b4",
         "name": "Start hook setup",
+=======
+        "id": "1f3cb0bd.e0c34f",
+        "type": "telegram bot",
+        "z": "aec7b1a8.b53f5",
+        "botname": "HeinzBot"
+    },
+    {
+        "id": "8bcd7bdd.b15c78",
+        "type": "telegram bot",
+        "botname": "UnivercitySecy2_bot",
+        "usernames": "olllllllllla",
+        "chatids": "688401120",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "5e86036e.d2eadc",
+        "type": "inject",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "props": [
             {
                 "p": "payload"
@@ -162,6 +211,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
+<<<<<<< HEAD
         "payload": "",
         "payloadType": "str",
         "x": 180,
@@ -8836,13 +8886,28 @@
             [
                 "d58a4efb.a360a",
                 "5e2b6880.a66e68"
+=======
+        "payload": "",
+        "payloadType": "date",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "519acc7a.fe2634"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "5e2b6880.a66e68",
         "type": "debug",
         "z": "6a384cdf.3670b4",
+=======
+        "id": "5b2a4d59.fb0cd4",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8852,6 +8917,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 2280,
         "y": 2320,
         "wires": []
@@ -8881,10 +8947,35 @@
         "wires": [
             [
                 "f42d0762.c95a88"
+=======
+        "x": 650,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "519acc7a.fe2634",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/setWebhook?url=https://79e0c702b938.ngrok.io/UnivercitySecy2_bot",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "5b2a4d59.fb0cd4"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "f394f668.854718",
         "type": "function",
         "z": "6a384cdf.3670b4",
@@ -8900,29 +8991,63 @@
             [
                 "d934a045.78509",
                 "d8119445.42bf78"
+=======
+        "id": "fe21fe38.121c9",
+        "type": "http in",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "url": "/UnivercitySecy2_bot",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 240,
+        "wires": [
+            [
+                "7f4cfafb.abf044",
+                "dc3f4632.3aabc8",
+                "35505cbd.6300c4"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "d8119445.42bf78",
         "type": "function",
         "z": "6a384cdf.3670b4",
         "name": "",
         "func": "msg.url = \"https://intern-task-winter.herokuapp.com/users/\" +msg.receiver;\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Token 1361242473:AAFrX-qwUt_FxxiASpX-KjyPpQJSBomyHkM\",\n    \"X-User-id\": msg.receiver\n};\n\n\nmsg.payload = {\n \n            \"step\": {other: msg.payload.other, user: msg.user},\n //           \"pointer\": \"RecordParent\"\n\n\n}\n\nreturn msg;",
+=======
+        "id": "35505cbd.6300c4",
+        "type": "function",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "func": "msg.payload = {\n\n  text: 'Hello friend',\n\n  chat_id: msg.payload.message.from.id,\n\n  }\nreturn msg;",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+<<<<<<< HEAD
         "x": 2360,
         "y": 3760,
         "wires": [
             [
                 "b98bf676.b0acc8",
                 "b2122e2e.ae13"
+=======
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "e21653c1.1fe95"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "b98bf676.b0acc8",
         "type": "http request",
         "z": "6a384cdf.3670b4",
@@ -8940,10 +9065,30 @@
         "wires": [
             [
                 "ab6814d9.81fc28"
+=======
+        "id": "e21653c1.1fe95",
+        "type": "http request",
+        "z": "a413c5de.eff2d8",
+        "name": "",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.telegram.org/bot1361242473:AAGUdZTvQ4e7QHjYYKiHYA3b6r6RxTCGjX0/sendMessage",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            [
+                "b8a1cedb.296a7"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "ab6814d9.81fc28",
         "type": "debug",
         "z": "6a384cdf.3670b4",
@@ -8964,6 +9109,11 @@
         "id": "b2122e2e.ae13",
         "type": "debug",
         "z": "6a384cdf.3670b4",
+=======
+        "id": "b8a1cedb.296a7",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -8973,6 +9123,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 2440,
         "y": 3840,
         "wires": []
@@ -8998,6 +9149,27 @@
         "id": "9db9ef17.85537",
         "type": "debug",
         "z": "6a384cdf.3670b4",
+=======
+        "x": 930,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7f4cfafb.abf044",
+        "type": "http response",
+        "z": "a413c5de.eff2d8",
+        "name": "http 200",
+        "statusCode": "",
+        "headers": {},
+        "x": 240,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "dc3f4632.3aabc8",
+        "type": "debug",
+        "z": "a413c5de.eff2d8",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -9007,6 +9179,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 1110,
         "y": 3840,
         "wires": []
@@ -9123,10 +9296,33 @@
         "wires": [
             [
                 "82324cfc.cea19"
+=======
+        "x": 430,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "59aeb36e.a6514c",
+        "type": "telegram receiver",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "bot": "8bcd7bdd.b15c78",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "decb1355.ddf0b"
+            ],
+            [
+                "7cc9439f.5fdcec"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "d9ced74.0b9dd28",
         "type": "function",
         "z": "c4e1ec3b.2615c",
@@ -9173,19 +9369,42 @@
         "wires": [
             [
                 "eebbd3c6.42255"
+=======
+        "id": "ec7432bc.138bd",
+        "type": "telegram sender",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "bot": "8bcd7bdd.b15c78",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 220,
+        "wires": [
+            [
+                "7cc9439f.5fdcec"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "2c8e6e5a.c68932",
         "type": "function",
         "z": "c4e1ec3b.2615c",
         "name": "Check Name at User Row / Zero Step",
         "func": "msg.url = \"https://intern-task-winter.herokuapp.com/users/\" +msg.receiver;\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Token 1361242473:AAFrX-qwUt_FxxiASpX-KjyPpQJSBomyHkM\"\n};\n\n\nmsg.payload = {\n\n            \"step\": \"FindUser\",\n            \"pointer\": \"FindUser\"\n\n}\n\nreturn msg;",
+=======
+        "id": "decb1355.ddf0b",
+        "type": "function",
+        "z": "aec7b1a8.b53f5",
+        "name": "Hello",
+        "func": "msg.payload.content =\"Hello friend\"\nreturn msg;",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+<<<<<<< HEAD
         "x": 1070,
         "y": 660,
         "wires": [
@@ -9204,10 +9423,18 @@
         "wires": [
             [
                 "2c8e6e5a.c68932"
+=======
+        "x": 400,
+        "y": 100,
+        "wires": [
+            [
+                "ec7432bc.138bd"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "51705004.ac02a",
         "type": "http request",
         "z": "c4e1ec3b.2615c",
@@ -9271,10 +9498,35 @@
         "z": "c4e1ec3b.2615c",
         "name": "Update User Role on Admin 1",
         "func": "msg.url = \"https://intern-task-winter.herokuapp.com/users/admins/\" +msg.payload;\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Authorization\": \"Token 1361242473:AAFrX-qwUt_FxxiASpX-KjyPpQJSBomyHkM\",\n    \"X-User-id\": msg.receiver\n};\n\n\nmsg.payload = {\n\n            \"roleId\": 1,\n            \"step\": \"CurrentAdmin\",\n            \"pointer\": \"CurrentAdmin\"\n\n}\n\nreturn msg;",
+=======
+        "id": "7cc9439f.5fdcec",
+        "type": "debug",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3026be2c.3847a2",
+        "type": "function",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "func": "let payload = {\n    chatId: 688401120,\n    type: \"message\",\n    content: \"Nice to meet you I`m bot\"\n}\nreturn {payload};",
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+<<<<<<< HEAD
         "x": 1890,
         "y": 760,
         "wires": [
@@ -9301,10 +9553,19 @@
         "wires": [
             [
                 "31fc6294.8b332e"
+=======
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "7cc9439f.5fdcec",
+                "ec7432bc.138bd"
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
             ]
         ]
     },
     {
+<<<<<<< HEAD
         "id": "82324cfc.cea19",
         "type": "subflow:ac745e15.26ec5",
         "z": "c4e1ec3b.2615c",
@@ -9352,5 +9613,34 @@
         "x": 1270,
         "y": 4740,
         "wires": []
+=======
+        "id": "3516b55b.b5283a",
+        "type": "inject",
+        "z": "aec7b1a8.b53f5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "3026be2c.3847a2"
+            ]
+        ]
+>>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
     }
 ]

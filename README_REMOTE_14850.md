@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-Bot_Telegram
-============
-
-### About
-
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
-=======
 UnivercitySecy2_bot
 ===================
 
@@ -33,4 +24,3 @@ NLP Q&A Telegram bot released me and Dev Team for entrants and their parents, in
 
 https://api.telegram.org/bot1617231541:AAEyMN-2QuafAlzTF1VjjyUm3OBCQz-12yc/sendMessage?chat_id=688401120&text=Test
 https://api.telegram.org/bot1617231541:AAEyMN-2QuafAlzTF1VjjyUm3OBCQz-12yc/getUpdates
->>>>>>> 8f66c1fc209df45462068a7405600a5148fa51de
